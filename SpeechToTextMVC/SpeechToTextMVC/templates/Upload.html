@@ -1,0 +1,17 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+<form action="Upload" method="POST" enctype="multipart/form-data">
+    <input type="file" id="videoUploadFile" name="file" accept="audio/wav">
+    <input type="submit" onclick="GetMetho();" />
+</form>
+
+
+<p>{{ message }}</p>
+
+    {% for your_list_element in myList %}
+<p>{{ your_list_element }} </p>
+    {% endfor %}
+
+{% endblock %}

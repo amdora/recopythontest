@@ -1,0 +1,42 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+
+<p>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class=flashes>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+</p>
+
+<form method="POST" action="Result" enctype="multipart/form-data">
+    <dl>
+        <p>
+            <input type="file" name="file" multiple="true" autocomplete="off" required>
+        </p>
+    </dl>
+    <p>
+        <input type="submit" value="Submit">
+    </p>
+</form>
+
+<!--<form action="Result" method="POST">
+    <p>Name <input type="text" name="Name" /></p>
+    <p>Physics <input type="text" name="Physics" /></p>
+    <p>Chemistry <input type="text" name="chemistry" /></p>
+    <p>Maths <input type="text" name="Mathematics" /></p>
+    <p><input type="submit" value="submit" /></p>
+</form>-->
+
+    {% for your_list_element in myList %}
+<p>{{ your_list_element }} </p>
+    {% endfor %}
+
+{% endblock %}
+
